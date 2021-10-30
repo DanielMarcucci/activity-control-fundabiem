@@ -9,6 +9,12 @@ import ActivityTypeForm from '../../pages/ActivityTypes/Form';
 import Activities from '../../pages/Activities';
 import ActivitiesForm from '../../pages/Activities/Form';
 import VolunteerPositions from '../../pages/VolunteerPositions'
+import VolunteerPositionsForm from '../../pages/VolunteerPositions/Form'
+import Volunteer from '../../pages/Volunteer'
+import VolunteerForm from '../../pages/Volunteer/Form'
+import EstateEvents from  '../../pages/EstateEvents'
+import EstateEventsForm from  '../../pages/EstateEvents/Form'
+
 
 // import Headding from './Headding';
 
@@ -29,9 +35,16 @@ export default function Layout(props) {
 				<Route exact path={`${url}/activities`} component={() => <Activities showButtonNew={true} />} />
 				<Route exact path={`${url}/activities/add`} component={ActivitiesForm} />
 				<Route exact path={`${url}/activities/edit/:id`} component={() => <ActivitiesForm showButtonNew={true} />} />
+
 				<Route exact path={`${url}/volunteer-positions`} component={() => <VolunteerPositions showButtonNew={true} />} />
-				<Route exact path={`${url}/volunteer-positions/add`} component={ActivitiesForm} />
+				<Route exact path={`${url}/volunteer-positions/add`} component={VolunteerPositionsForm} />
 				<Route exact path={`${url}/volunteer-positions/edit/:id`} component={() => <ActivitiesForm showButtonNew={true} />} />
+				<Route exact path={`${url}/voluntaries`} component={() => <Volunteer showButtonNew={true} />} />
+				<Route exact path={`${url}/voluntaries/add`} component={VolunteerForm} />
+				<Route exact path={`${url}/voluntaries/edit/:id`} component={() => <ActivitiesForm showButtonNew={true} />} />
+				<Route exact path={`${url}/event-statuses`} component={() => <EstateEvents showButtonNew={true} />} />
+				<Route exact path={`${url}/event-statuses/add`} component={EstateEventsForm} />
+				<Route exact path={`${url}/event-statuses/edit/:id`} component={() => <ActivitiesForm showButtonNew={true} />} />
 			</Switch>
 		</div>
 	)
