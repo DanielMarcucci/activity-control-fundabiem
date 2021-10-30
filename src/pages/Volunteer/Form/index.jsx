@@ -55,19 +55,37 @@ export default function ActivityTypeForm() {
 		if (id) {
 			loadActivityType(id)
 		}
-		setFocus("name")
+		setFocus("firstname")
 	}, [id, setFocus])
 
 	return (
-		<Main title={(id ? "Editar" : "Nueva") + " Posicion de Voluntarios"}>
+		<Main title={(id ? "Editar" : "Nueva") + " Voluntarios"}>
 			<div>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="shadow overflow-hidden sm:rounded-md">
 						<div className="px-4 py-5 bg-white sm:p-6">
 							<div className="grid grid-cols-12 gap-3">
 								{errors.exampleRequired && <span>This field is required</span>}
-								<div className="col-span-12 sm:col-span-8">
-									<Input type="text" label="Nombre Voluntario" name="name" register={register} required />
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="text" label="Dpi de Voluntario" name="dpi" register={register} required />
+								</div>
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="text" label="Primer Nombre" name="firstname" register={register} required />
+								</div>
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="text" label="Segundo Nombre" name="secondname" register={register} required />
+								</div>
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="text" label="Primer Apellido" name="firstsurname" register={register} required />
+								</div>
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="text" label="Segundo Apellido" name="secondsurname" register={register} required />
+								</div>
+								<div className="col-span-12">
+									<Input type="text" label="Direccion" name="address" register={register} required />
+								</div>
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="date" label="Cumpleaños" name="birthday" register={register} required />
 								</div>
 								<div className="hidden sm:block sm:col-span-4"></div>
 

@@ -59,18 +59,19 @@ export default function ActivityTypeForm() {
 	}, [id, setFocus])
 
 	return (
-		<Main title={(id ? "Editar" : "Nueva") + " Posicion de Voluntarios"}>
+		<Main title={(id ? "Editar" : "Nueva") + " Estado Evento"}>
 			<div>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="shadow overflow-hidden sm:rounded-md">
 						<div className="px-4 py-5 bg-white sm:p-6">
 							<div className="grid grid-cols-12 gap-3">
 								{errors.exampleRequired && <span>This field is required</span>}
-								<div className="col-span-12 sm:col-span-8">
-									<Input type="text" label="Nombre Voluntario" name="name" register={register} required />
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="text" label="Nombre" name="name" register={register} required />
 								</div>
-								<div className="hidden sm:block sm:col-span-4"></div>
-
+								<div className="col-span-12 sm:col-span-4">
+									<Input type="text" label="Descripcion" name="description" register={register} required />
+								</div>
 								<div className="col-span-12">
 									<Checkbox label="Activo" help="Para la disponibilidad de uso debe estar activo el estatus" name="status" register={register} />
 									
